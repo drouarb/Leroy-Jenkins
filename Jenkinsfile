@@ -10,11 +10,11 @@ node {
     sh "${mvnHome}/bin/mvn clean verify"
   }
 
-  stage('Publish-tests') {
+  stage('tests') {
     junit allowEmptyResults: true, testResults: 'target/surefire-reports/TEST-*.xml'
   }
 
-  stage('Save') {
-    stash includes: 'target/leroy.jenkins-*.jar', name: 'build-artifacts'
+  stage('target') {
+    stashname :'binary',includes :'target/*.jar'
   }
 }
