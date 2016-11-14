@@ -2,7 +2,7 @@ node {
   def mvnHome = tool 'M3'
 
   stage('Build') {
-    sh "${mvnHome}/bin/mvn install"
+    sh "${mvnHome}/bin/mvn clean verify"
   }
 
   stage('Publish-tests') {
