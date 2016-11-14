@@ -13,8 +13,4 @@ node {
   stage('tests') {
     junit allowEmptyResults: true, testResults: 'target/surefire-reports/TEST-*.xml'
   }
-
-  stage('target') {
-    stashname :'binary',includes :'target/*.jar'
-  }
 }
