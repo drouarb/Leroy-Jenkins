@@ -13,4 +13,8 @@ node {
   stage('tests') {
     junit allowEmptyResults: true, testResults: 'target/surefire-reports/TEST-*.xml'
   }
+
+  stage('artifacts') {
+    stash includes: 'target/*.jar', name: 'build-artifacts'
+  }
 }
