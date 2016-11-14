@@ -7,7 +7,7 @@ node {
   }
 
   stage('Build') {
-    sh "${mvnHome}/bin/mvn clean verify"
+    sh "${mvnHome}/bin/mvn clean install"
   }
 
   stage('tests') {
@@ -15,6 +15,6 @@ node {
   }
 
   stage('artifacts') {
-    stash includes: 'target/*.jar', name: 'build-artifacts'
+    archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.jar', onlyIfSuccessful: true
   }
 }
