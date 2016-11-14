@@ -3,9 +3,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by gauthier on 14/11/16.
- */
 public class MainTest {
     private Main main;
 
@@ -23,8 +20,9 @@ public class MainTest {
 
     @Test
     public void setName() throws Exception {
-        assertEquals(main.getName(), "");
         main.setName("toto");
         assertEquals(main.getName(), "toto");
+        main.setName("");
+        assertEquals(main.getName(), "");
     }
 }

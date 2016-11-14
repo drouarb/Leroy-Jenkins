@@ -1,8 +1,15 @@
+import java.util.Scanner;
+
 public class Main {
     private String name;
 
     public static void main(String[] args) {
-        new Main().getHello();
+        Main main = new Main();
+        System.out.println(main.getHello());
+        System.out.println("What is your name ?");
+        String s = new Scanner(System.in).nextLine();
+        main.setName(s);
+        System.out.println(main.getHello());
     }
 
     Main() {
