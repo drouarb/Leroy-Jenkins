@@ -7,7 +7,7 @@ node {
   }
 
   stage('Build') {
-    sh "${mvnHome}/bin/mvn clean verify"
+    sh "${mvnHome}/bin/mvn clean install"
   }
 
   stage('tests') {
